@@ -2,9 +2,7 @@ name: Coding Standards checks
 on:
   pull_request:
     branches:
-      - master
-      - staging
-      - development
+      - '*'
 
 jobs:
   php:
