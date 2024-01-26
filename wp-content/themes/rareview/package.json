@@ -1,0 +1,81 @@
+{
+  "name": "rareview-theme",
+  "version": "1.0.0",
+  "description": "WordPress theme for Rareview by Rareview",
+  "homepage": "https://rareview.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rareview/rareview-wordpress-coding-challenge-starter"
+  },
+  "author": {
+    "name": "Rareview",
+    "email": "info@rareview.com",
+    "url": "https://rareview.com",
+    "role": "developer"
+  },
+  "scripts": {
+    "setup": "npm install && npm run build",
+    "start": "npm run watch",
+    "watch": "10up-toolkit build --watch",
+    "hot": "10up-toolkit watch --port=5000 --hot",
+    "build": "10up-toolkit build",
+    "build:release": "npm install && npm run build",
+    "lint:release": "npm install && npm run lint",
+    "format:json": "prettier --write './**/*.json'",
+    "format:js": "10up-toolkit format-js",
+    "format:css": "10up-toolkit lint-style --fix",
+    "format:php": "composer run lint:fix --working-dir=../../..",
+    "lint:js": "10up-toolkit lint-js",
+    "lint:json": "prettier --check './**/*.json'",
+    "lint:style": "10up-toolkit lint-style",
+    "lint:php": "composer run lint --working-dir=../../..",
+    "lint": "npm run lint:js && npm run lint:json && npm run lint:style && npm run lint:php",
+    "format": "npm run format:js && npm run format:json && npm run format:css",
+    "test": "10up-toolkit test-unit-jest",
+    "test:a11y": "node tests/accessibility/compliance/pa11y.js",
+    "clean-dist": "rm -rf ./dist"
+  },
+  "testing": {
+    "urls": {
+      "local": "http://rareview.local/"
+    },
+    "accessibility": {
+      "compliance": "WCAG2AA"
+    }
+  },
+  "engines": {
+    "node": ">=16.20.1 < 17.0.0",
+    "npm": ">=8.2.8"
+  },
+  "devDependencies": {
+    "@10up/babel-preset-default": "^2.1.0",
+    "@10up/block-components": "^1.17.2",
+    "@wordpress/eslint-plugin": "^14.12.0",
+    "10up-toolkit": "^5.2.2",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.46.0",
+    "postcss-svg": "^3.0.0",
+    "prettier": "^2.7.1"
+  },
+  "dependencies": {
+    "@dnd-kit/core": "^6.0.8",
+    "@dnd-kit/sortable": "^7.0.2",
+    "@dnd-kit/utilities": "^3.2.1",
+    "@emotion/styled": "^11.11.0",
+    "a11y-dialog": "^8.0.1",
+    "classnames": "^2.3.2",
+    "html-react-parser": "^4.2.1",
+    "prop-types": "^15.8.1"
+  },
+  "10up-toolkit": {
+    "entry": {
+      "admin": "./assets/js/admin/admin.js",
+      "editor-style-overrides": "./assets/js/admin/editor-style-overrides.js",
+      "frontend": "./assets/js/frontend/frontend.js",
+      "shared": "./assets/js/shared/shared.js",
+      "core-block-overrides": "./includes/core-block-overrides.js"
+    },
+    "devURL": "http://rareview.local/",
+    "useBlockAssets": true
+  }
+}

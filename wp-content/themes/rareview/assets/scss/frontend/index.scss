@@ -1,0 +1,25 @@
+/**
+ * Frontend Styles
+ */
+
+/* Global - global pieces like media queries, mixins and placeholders */
+@import "global/index";
+
+/* Base - base styles such as fonts, typography, and wordpress overrides */
+@import "base/index";
+
+/* Layout - styles specific to layout */
+
+@import "layout/index";
+
+/* Templates */
+
+@import "templates/index";
+
+/* Components */
+
+@import "components/index";
+
+/* Gutenberg blocks */
+
+// @import "../blocks/index"

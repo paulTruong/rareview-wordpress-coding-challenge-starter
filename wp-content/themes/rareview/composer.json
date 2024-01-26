@@ -1,0 +1,20 @@
+{
+  "name": "rareview/rareview",
+  "description": "WordPress theme for Rareview by Rareview",
+  "type": "wordpress-theme",
+  "authors": [
+    {
+      "name": "Rareview",
+      "email": "hello@rareview.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.2",
+    "haydenpierce/class-finder": "^0.4.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "rareview\\": "includes/classes/"
+    }
+  }
+}

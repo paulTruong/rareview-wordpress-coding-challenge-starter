@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "title": "Example Block",
+  "description": "Example Block",
+  "textdomain": "rareview-theme",
+  "name": "rareview/example-block",
+  "icon": "share",
+  "category": "rareview",
+
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  },
+  "supports": {
+    "html": false,
+    "spacing": {
+      "padding": true
+    },
+    "align": true
+  },
+  "editorScript": "file:./index.js"
+}

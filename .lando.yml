@@ -1,0 +1,65 @@
+name: rareview-lando
+
+recipe: wordpress
+
+config:
+  php: 8.2
+  composer_version: 2
+  webroot: .
+  cache: memcached
+  ssl: false
+  via: nginx
+  xdebug: true
+  config:
+    php: .lando/php.ini
+    database: .lando/mysql.cnf
+
+proxy:
+  appserver_nginx:
+    - rareview.local
+
+services:
+  database:
+    portforward: true
+  mailhog:
+    type: mailhog
+    portforward: true
+  appserver:
+    build_as_root:
+      - apt-get update -y
+      - yes | pecl install memcache-8.0
+      - docker-php-ext-enable memcache
+    memcached:
+      type: memcached:1.6.21
+      portforward: true
+
+events:
+  pre-start:
+    - composer install --prefer-dist --optimize-autoloader
+    - composer install --prefer-dist --optimize-autoloader --working-dir=wp-content/themes/rareview
+    - bash .lando/bin/pre-start.sh
+  post-start:
+    - bash .lando/bin/post-start.sh
+
+tooling:
+  wp:
+    service: 'appserver'
+  import-db:
+    description: Imports .lando/db-dumps/mysql.sql into the WordPress database.
+    service: appserver
+    cmd:
+      - if [ ! -e ".lando/db-dumps/mysql.sql" ]; then echo "Database file (.lando/db-dumps/mysql.sql) does not exist."; exit 1; fi
+      - wp db import .lando/db-dumps/mysql.sql
+      - wp search-replace https://rareview.com http://rareview.local
+      - wp cache flush
+      - wp rewrite flush
+  xdebug-on:
+    service: appserver
+    description: Enable xdebug for nginx.
+    cmd: docker-php-ext-enable xdebug && pkill -o -USR2 php-fpm && echo "Enabling xdebug"
+    user: root
+  xdebug-off:
+    service: appserver
+    description: CUSTOM Disable xdebug for nginx.
+    cmd: rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && pkill -o -USR2 php-fpm && echo "Disabling xdebug"
+    user: root

@@ -1,0 +1,56 @@
+{
+  "name": "rareview-wordpress-coding-challenge-starter",
+  "version": "0.1.0",
+  "description": "Rareview Coding Challenge Starter",
+  "homepage": "https://api.rareview.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rareview/rareview-wordpress-coding-challenge-starter"
+  },
+  "workspaces": [
+    "wp-content/themes/rareview",
+    "mu-plugins/rareview"
+  ],
+  "scripts": {
+    "prepare": "husky install",
+    "setup": "npm run setup --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "start": "npm run watch",
+    "watch:theme": "npm run watch -w=rareview-theme",
+    "install:theme": "npm install -w=rareview-theme",
+    "watch": "run-p watch:theme",
+    "watch:hot": "npm run hot -w=rareview-theme",
+    "hot": "run-p hot:theme",
+    "build-release": "npm run build-release --workspaces --if-present",
+    "lint-release": "npm run lint-release --workspaces --if-present",
+    "format:json": "npm run format:json --workspaces --if-present",
+    "format:js": "npm run format:js --workspaces --if-present",
+    "format:css": "npm run format:css --workspaces --if-present",
+    "format:php": "npm run format:php --workspaces --if-present",
+    "lint:js": "npm run lint:js --workspaces --if-present",
+    "lint:json": "npm run lint:json --workspaces --if-present",
+    "lint:style": "npm run lint:style --workspaces --if-present",
+    "lint:php": "npm run lint:php --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "format": "npm run format --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "test:a11y": "npm run test:a11y --workspaces --if-present",
+    "clean-dist": "npm run clean-dist --if-present"
+  },
+  "author": {
+    "name": "Rareview",
+    "email": "hello@rareview.com",
+    "url": "https://rareview.com",
+    "role": "developer"
+  },
+  "engineStrict": true,
+  "engines": {
+    "node": ">=16.20.1 <17.0.0",
+    "npm": ">=8.2.8"
+  },
+  "devDependencies": {
+    "husky": "8.0.3",
+    "lint-staged": "13.2.3",
+    "npm-run-all": "4.1.5"
+  }
+}
