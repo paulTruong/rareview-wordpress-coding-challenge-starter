@@ -11,3 +11,5 @@
 - NPM >= 8.2.8
 
 See [Local Development Setup](.lando/docs/local-development-setup.md) for details setup.
+
+See the theme [README.md](wp-content/themes/rareview/README.md) for details on the theme.
