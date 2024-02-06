@@ -14,7 +14,7 @@ import { TextControl, PanelRow } from '@wordpress/components';
  *
  * @returns {JSX.Element} The component.
  */
-const TextControlPickerInput = ({ metaKey, label, postMeta, setPostMeta }) => {
+const MetaTextControlInput = ({ metaKey, label, postMeta, setPostMeta }) => {
 	return (
 		Object.prototype.hasOwnProperty.call(postMeta, metaKey) && (
 			<PanelRow>
@@ -28,4 +28,4 @@ const TextControlPickerInput = ({ metaKey, label, postMeta, setPostMeta }) => {
 	);
 };
 
-export default TextControlPickerInput;
+export default MetaTextControlInput;
