@@ -19,7 +19,7 @@ class PostTypeServiceProvider {
 	 * @var array
 	 */
 	public static array $post_types = [
-		ExampleCPT::class,
+		BookCPT::class,
 	];
 
 	/**

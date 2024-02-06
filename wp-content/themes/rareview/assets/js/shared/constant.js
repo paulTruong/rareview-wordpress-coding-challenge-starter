@@ -3,3 +3,5 @@
 export const META_KEY_PREFIX = '_rareview_';
 export const EXAMPLE_POST_TYPE = 'example_cpt';
 export const EXAMPLE_CPT_EXAMPLE_META_KEY = `${META_KEY_PREFIX}${EXAMPLE_POST_TYPE}_example_meta`;
+export const BOOK_POST_TYPE = 'book';
+export const BOOK_AUTHOR_NAME_META_KEY = `${META_KEY_PREFIX}${BOOK_POST_TYPE}_author_name`;

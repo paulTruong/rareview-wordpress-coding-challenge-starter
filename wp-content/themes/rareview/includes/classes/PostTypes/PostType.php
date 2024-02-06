@@ -187,6 +187,7 @@ class PostType {
 			'singular_name'      => $singular_label,
 			'all_items'          => sprintf( 'All %s', $plural_label ),
 			'add_new_item'       => sprintf( 'Add New %s', $singular_label ),
+			'add_new'            => sprintf( 'Add New %s', $singular_label ),
 			'edit_item'          => sprintf( 'Edit %s', $singular_label ),
 			'new_item'           => sprintf( 'New %s', $singular_label ),
 			'view_item'          => sprintf( 'View %s', $singular_label ),
