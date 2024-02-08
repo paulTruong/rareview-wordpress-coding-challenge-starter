@@ -1,0 +1,20 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "title": "Book Item",
+  "description": "A single book item. Only usable as part of the Book Listing block.",
+  "textdomain": "rareview-theme",
+  "name": "rareview/book-item",
+  "icon": "book",
+  "category": "rareview",
+  "parent": ["rareview/book-listing"],
+  "attributes": {
+    "id": {
+      "type": "number"
+    }
+  },
+  "supports": {
+    "inserter": false
+  },
+  "editorScript": "file:./index.js"
+}

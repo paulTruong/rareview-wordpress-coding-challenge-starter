@@ -1,0 +1,31 @@
+.rv-book-block {
+	padding: 1rem;
+}
+
+.rv-book-block__featured-image {
+	width: auto;
+	height: 300px;
+	object-fit: contain;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.rv-book-block__title {
+	font-size: 2rem;
+	font-weight: 700;
+	line-height: 1.1;
+	margin: 0;
+}
+
+.rv-book-block__author-name {
+	font-size: 0.875rem;
+	margin-top: 0.25rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #d00b0b;
+}
+
+.rv-book-block__excerpt {
+	font-size: 1rem;
+	line-height: 1.35;
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "title": "Book Listing",
+  "description": "Select and display a list of books",
+  "textdomain": "rareview-theme",
+  "name": "rareview/book-listing",
+  "icon": "book",
+  "category": "rareview",
+  "attributes": {
+    "books": {
+      "type": "array",
+      "default": [],
+      "query": {
+        "id": {
+          "type": "number"
+        }
+      }
+    }
+  },
+  "supports": {
+    "align": true
+  },
+  "editorScript": "file:./index.js"
+}
