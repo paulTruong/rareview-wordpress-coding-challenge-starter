@@ -3,7 +3,7 @@
  */
 import { useBlockProps } from '@wordpress/block-editor';
 import { useSelect } from '@wordpress/data';
-import FeatureImage from './FeaturedImage';
+import FeaturedImage from './FeaturedImage';
 
 const edit = ({ attributes }) => {
 	// eslint-disable-next-line react-hooks/rules-of-hooks
@@ -27,10 +27,13 @@ const edit = ({ attributes }) => {
 	}
 	return (
 		<li {...blockProps} key={id}>
-			<FeatureImage className="rv-book-block__featured-image" imageId={post.featured_media} />
 			<div className="rv-book-block__meta">
 				<p className="rv-book-block__title">{post.title.raw}</p>
 				<p className="rv-book-block__author-name">{post.meta._rareview_book_author_name}</p>
+				<FeaturedImage
+					className="rv-book-block__featured-image"
+					imageId={post.featured_media}
+				/>
 				<p className="rv-book-block__excerpt">{post.excerpt.raw}</p>
 			</div>
 		</li>

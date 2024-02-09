@@ -12,7 +12,7 @@ import { useSelect } from '@wordpress/data';
  *
  * @returns {JSX.Element} The component.
  */
-const FeatureImage = ({ className, imageId }) => {
+const FeaturedImage = ({ className, imageId }) => {
 	// eslint-disable-next-line react-hooks/rules-of-hooks
 	const featuredImage = useSelect(
 		(select) => {
@@ -31,4 +31,4 @@ const FeatureImage = ({ className, imageId }) => {
 	);
 };
 
-export default FeatureImage;
+export default FeaturedImage;
