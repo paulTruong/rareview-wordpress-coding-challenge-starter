@@ -21,7 +21,7 @@ $title              = get_the_title( $post_id );
 		<p class="rv-book-block__title"><?php echo esc_html( $title ); ?></p>
 		<p class="rv-book-block__author-name"><?php echo esc_html( $author_name ); ?></p>
 		<?php if ( $featured_image_url ) : ?>
-			<img class="rv-book-block__featured-image" src="<?php echo esc_url( $featured_image_url ); ?>" alt="<?php echo esc_url( $featured_image_alt ); ?>">
+			<img class="rv-book-block__featured-image" src="<?php echo esc_url( $featured_image_url ); ?>" alt="<?php echo esc_attr( $featured_image_alt ); ?>">
 		<?php endif; ?>
 		<p class="rv-book-block__excerpt"><?php echo esc_html( $excerpt ); ?></p>
 	</div>
